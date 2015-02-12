@@ -98,11 +98,11 @@ namespace OnlineWeek4Day3.Controllers
         {
             if (model.CharacterType == CharacterType.BountyHunter)
             {
-                characters.Add(new Jedi(model.Name, model.Race, null, model.Id));
+                characters.Add(new BountyHunter(model.Name, model.Race, null, model.Id));
             }
             else if (model.CharacterType == CharacterType.Jedi)
             {
-                characters.Add(new BountyHunter(model.Name, model.Race, null, model.Id));
+                characters.Add(new Jedi(model.Name, model.Race, null, model.Id));
             }
             return RedirectToAction("Index");
         }
