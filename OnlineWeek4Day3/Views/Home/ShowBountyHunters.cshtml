@@ -1,0 +1,25 @@
+﻿@model List<OnlineWeek4Day3.Models.BountyHunter>
+
+<h1>Bounty Hunters</h1>
+<br />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Race</th>
+            <th>Weapon Type</th>
+            <th>Buttons</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hunter in Model)
+        {
+            <tr>
+                <td>@hunter.Name</td>
+                <td>@hunter.Race</td>
+                <td>@hunter.WeaponType</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = hunter.Id }, new { @class = "btn btn-primary" })</td>
+            </tr>
+        }
+    </tbody>
+</table>

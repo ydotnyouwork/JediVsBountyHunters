@@ -1,0 +1,37 @@
+﻿@model List<OnlineWeek4Day3.Models.Character>
+
+<br />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Race</th>
+            <th>Type</th>
+            <th>Buttons</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var character in Model)
+        {
+            <tr>
+                <td>@character.Name</td>
+                <td>@character.Race</td>
+                <td>
+                    @{
+            if (character.CharacterType == OnlineWeek4Day3.Models.CharacterType.BountyHunter)
+            {
+                @Html.Raw("Bounty Hunter")
+            }
+            else
+            {
+                @Html.Raw("Jedi")
+            }
+                    }
+                </td>
+                <td>@Html.ActionLink("Details", "Details", new { id = character.Id }, new { @class = "btn btn-primary" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Add Character", "AddCharacter", null, new { @class = "btn btn-success" })

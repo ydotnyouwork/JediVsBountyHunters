@@ -1,0 +1,26 @@
+﻿@model List<OnlineWeek4Day3.Models.Jedi>
+
+<h1>Jedis</h1>
+<br />
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Race</th>
+            <th>Lightsaber Color</th>
+            <th>Buttons</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var jedi in Model)
+        {
+            <tr>
+                <td>@jedi.Name</td>
+                <td>@jedi.Race</td>
+                <td>@jedi.LightsaberColor</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = jedi.Id }, new { @class = "btn btn-primary" })</td>
+            </tr>
+        }
+    </tbody>
+</table>

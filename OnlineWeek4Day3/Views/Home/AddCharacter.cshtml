@@ -1,0 +1,19 @@
+﻿@model OnlineWeek4Day3.Models.Character
+
+<h2>AddCharacter</h2>
+
+<form method="post">
+    @Html.LabelFor(x => x.Name)<br />
+    @Html.TextBoxFor(x => x.Name)<br />
+    @Html.LabelFor(x => x.Race) <br />
+    @Html.TextBoxFor(x => x.Race)<br />
+    @Html.LabelFor(x => x.Id) <br />
+    @Html.TextBoxFor(x => x.Id) <br />
+    @Html.LabelFor(x => x.CharacterType) <br />
+    <select name="CharacterType">
+        <option value="Jedi">Jedi</option>
+        <option value="BountyHunter">Bounty Hunter</option>
+    </select> <br />
+
+    <button class="btn btn-info" type="submit">Submit</button>
+</form>
